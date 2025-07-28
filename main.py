@@ -22,7 +22,8 @@ async def tune_sentence(request: SentenceRequest):
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",  # or "gpt-4"
             messages=[
-                {"role": "system", "content": "You are a helpful assistant that rewrites text to be more very professionally and ."},
+                {"role": "system", "content": "You are a helpful assistant that rewrites text to be more very professionally and formally."
+                ""},
                 {"role": "user", "content": f"Rewrite the following sentence very professionally:\n\n{request.sentence}"}
             ],
             temperature=0.7
